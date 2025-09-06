@@ -11,7 +11,7 @@ Columns:
     TLD, 
     URLSimilarityIndex, 
     CharContinuationRate, 
-    TLDLegitimateProb,        
+    TLDLegitimateProb, 
     URLCharProb,
     TLDLength,
     NoOfSubDomain,
