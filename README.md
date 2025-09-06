@@ -11,7 +11,8 @@ Columns:
     TLD, 
     URLSimilarityIndex, 
     CharContinuationRate, 
-    TLDLegitimateProb
+    TLDLegitimateProb, 
+    + 46 more
 
 Target:
     Come up with a binary classification for which URLs are phishing. 
