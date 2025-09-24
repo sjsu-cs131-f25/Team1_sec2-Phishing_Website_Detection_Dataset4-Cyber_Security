@@ -1,0 +1,117 @@
+Script started on 2025-09-15
+
+bash-4.4$ head -n 1 dataset4.csv > dataset_header.csv
+bash-4.4$ cat dataset_header.csv
+FILENAME,URL,URLLength,Domain,DomainLength,IsDomainIP,TLD,URLSimilarityIndex,CharContinuationRate,TLDLegitimateProb,URLCharProb,TLDLength,NoOfSubDomain,HasObfuscation,NoOfObfuscatedChar,ObfuscationRatio,NoOfLettersInURL,LetterRatioInURL,NoOfDegitsInURL,DegitRatioInURL,NoOfEqualsInURL,NoOfQMarkInURL,NoOfAmpersandInURL,NoOfOtherSpecialCharsInURL,SpacialCharRatioInURL,IsHTTPS,LineOfCode,LargestLineLength,HasTitle,Title,DomainTitleMatchScore,URLTitleMatchScore,HasFavicon,Robots,IsResponsive,NoOfURLRedirect,NoOfSelfRedirect,HasDescription,NoOfPopup,NoOfiFrame,HasExternalFormSubmit,HasSocialNet,HasSubmitButton,HasHiddenFields,HasPasswordField,Bank,Pay,Crypto,HasCopyrightInfo,NoOfImage,NoOfCSS,NoOfJS,NoOfSelfRef,NoOfEmptyRef,NoOfExternalRef,label
+
+bash-4.4$ shuf -n 1000 dataset4.csv >> dataset_1k_random_samples.csv
+bash-4.4$ wc -l dataset_1k_random_samples.csv
+1001 dataset_1k_random_samples.csv
+
+bash-4.4$ mkdir samples
+bash-4.4$ mv dataset_1k_random_samples.csv samples/
+bash-4.4$ cd samples/
+bash-4.4$ ls
+bash-4.4$ ls samples/
+dataset_1k_random_samples.csv
+
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | cut -d',' -f1 | sort | uniq -c | sort -nr | head -n 10 > freq_FILENAME.txt
+bash-4.4$ cat freq_FILENAME.txt
+      1 oph14971.txt
+      1 oph14654.txt
+      1 oph14100.txt
+      1 oph13968.txt
+      1 oph13690.txt
+      1 oph13353.txt
+      1 oph12004.txt
+      1 oph11542.txt
+      1 oph10481.txt
+      1 oph10471.txt
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | cut -d',' -f3 | sort | uniq -c | sort -nr > freq_URLLENGTH.txt
+bash-4.4$ cat freq_URLLENGTH.txt | head -n 10
+     76 26
+     68 24
+     58 28
+     58 25
+     54 27
+     52 29
+     51 30
+     49 22
+     49 21
+     46 23
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | cut -d',' -f15 | sort | uniq -c | sort -nr | head -n 10 > Top_10_hasObfuscation.txt
+bash-4.4$ cat Top_10_hasObfuscation.txt
+    997 0
+      2 3
+      1 33
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | cut -d',' -f31 | sort | uniq -c | sort -nr | head -n 10 > Top_10_DomainTitleMatchScore.txt
+    489 100
+    478 0
+      4 87.5
+      3 75
+      2 92.30769231
+      2 90
+      2 66.66666667
+      2 2.857142857
+      2 11.11111111
+      1 90.90909091
+ 
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | cut -d',' -f44 | sort | uniq -c | sort -nr | head -n 10 > Top_10_HasHiddenFields.txt
+bash-4.4$ cat Top_10_HasHiddenFields.txt
+    593 0
+    407 1
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | cut -d',' -f2,22,36 | sort -u > SkinnyTable_URL_Qmark_Redirect.txt
+bash-4.4$ head -n 10 SkinnyTable_URL_Qmark_Redirect.txt
+http://006l5.mjt.lu/lnk/... ,0,0
+http://100.25.183.15/,0,1
+http://167.71.45.12/staticwp-paydayjv/wp/... ,0,0
+http://2472346.ag483638.web.hosting-test.net/... ,0,0
+http://2629932.bm494174.web.hosting-test.net/... ,0,0
+http://3636678.com/,0,0
+http://43.159.32.185/v3/signin/identifier?... ,3,0
+http://43.159.48.238/v3/signin/identifier?... ,3,0
+http://abiacdveks.dynamicrewards.club/vnafvra97w/... ,1,0
+http://attdomainthomasservice.weeblysite.com/,0,1
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | cut -d',' -f4 | sort | uniq -c | sort -nr | head -n 10
+      6 ipfs.io
+      2 mail.deliverylifesupport.com
+      2 dweb.link
+      2 docs.google.com
+      1 zuryurdierapackcompletoen.filesusr.com
+      1 yts.direct
+      1 ygb886p1.r.ap-southeast-2.awstrack.me
+      1 yflaqweqra.duckdns.org
+      1 yahoo-106442.square.site
+      1 xvitbrqlub.temp.swtest.ru
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | cut -d',' -f19 | sort | uniq -c | sort -nr > freq_DigitsInURl.txt
+bash-4.4$ head -n 10 freq_DigitsInURl.txt
+    787 0
+     31 1
+     25 2
+     24 3
+     22 4
+     19 6
+     18 7
+     10 5
+      8 8
+      6 10
+
+bash-4.4$ tail -n +2 dataset_1k_random_samples.csv | grep -v '?' | cut -d',' -f2 > URLSWithNoQmark_grepv.txt
+bash-4.4$ wc -l URLSWithNoQmark_grepv.txt
+964 URLSWithNoQmark_grepv.txt
+
+Script done on 2025-09-15
+bash-4.4$ cd temls
+bash-4.4$ cd Team1_sec2-Phishing_Website_Detection_Dataset4-Cyber_Security/
+bash-4.4$ cd data/
+bash-4.4$ cd data/samples/
+bash-4.4$ cd Team1_sec2-Phishing_Website_Detection_Dataset4-Cyber_Security/data/samples/
+bash-4.4$ ls tail -n +2 dataset_1k_random_samples.csv |cut -d',' -f19 | sort | uniq -c | sort -nr > freq_DigitsInURl.txth >freq_DigitsInURl.txt
