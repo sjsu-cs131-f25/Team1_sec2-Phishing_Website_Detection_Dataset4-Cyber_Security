@@ -109,9 +109,3 @@ bash-4.4$ wc -l URLSWithNoQmark_grepv.txt
 964 URLSWithNoQmark_grepv.txt
 
 Script done on 2025-09-15
-bash-4.4$ cd temls
-bash-4.4$ cd Team1_sec2-Phishing_Website_Detection_Dataset4-Cyber_Security/
-bash-4.4$ cd data/
-bash-4.4$ cd data/samples/
-bash-4.4$ cd Team1_sec2-Phishing_Website_Detection_Dataset4-Cyber_Security/data/samples/
-bash-4.4$ ls tail -n +2 dataset_1k_random_samples.csv |cut -d',' -f19 | sort | uniq -c | sort -nr > freq_DigitsInURl.txth >freq_DigitsInURl.txt
