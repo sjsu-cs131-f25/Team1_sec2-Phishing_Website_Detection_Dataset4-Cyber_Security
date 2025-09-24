@@ -1,8 +1,8 @@
 # Team1_sec2-Phishing_Website_Detection_Dataset4-Cyber_Security
 Finding patterns in URLs to detect phishing
 
-Download Instructions  
-    (Download dataset4 from this Kaggle link):
+Download Instructions:  
+    (Download dataset4 from this Kaggle link)
       https://www.kaggle.com/datasets/mdsultanulislamovi/phishing-website-detection-datasets?select=dataset4.csv
 
 Size: 56.85 MB
