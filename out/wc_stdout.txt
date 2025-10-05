@@ -1,6 +1,0 @@
-  44 out/diff_top30.txt
-   0 out/project3_session.txt
-  30 out/top30_clusters.txt
- 448 out/top30_overall_full.txt
-  30 out/top30_overall.txt
- 552 total
