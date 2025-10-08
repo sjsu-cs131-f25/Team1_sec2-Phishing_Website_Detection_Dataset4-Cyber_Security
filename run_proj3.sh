@@ -138,16 +138,9 @@ echo
 
 
 # ============== STEP 5: Network visualization ==================
-echo "===== STEP 5: cluster_viz.png (Top-${TOPK} domains, cap ${CAP}/domain) ====="
-# Select Top-K domains by frequency in thresholded edges
-awk -F'\t' 'NR>1{c[$1]++} END{for(k in c) print c[k]"\t"k}' "$OUTDIR/edges_thresholded.tsv" \
-  | sort -nr | head -"$TOPK" | cut -f2 > "$OUTDIR/topK_domains.txt"
+echo "===== STEP 5: cluster_viz.png ====="
 
-# Build subset edges (cap per domain to keep readable)
-awk -F'\t' -v L="$CAP" 'NR==FNR{keep[$1]=1; next}
-  NR==1{print; next}
-  ($1 in keep){ if(++cnt[$1]<=L) print }' \
-  "$OUTDIR/topK_domains.txt" "$OUTDIR/edges_thresholded.tsv" > "$OUTDIR/cluster_subset.tsv"
+head "$OUTDIR/edges_thresholded.tsv" > "$OUTDIR/cluster_subset.tsv"
 
 
 
