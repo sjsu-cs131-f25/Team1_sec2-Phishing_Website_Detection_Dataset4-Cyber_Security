@@ -10,7 +10,7 @@ Columns: 56
 Values: 235,795
 
 Columns:
-    Filename, 
+    FileName, 
     URL, 
     URLLength, 
     Domain, 
@@ -28,13 +28,13 @@ Columns:
     ObfuscationRatio, 
     NoOfLettersInURL, 
     LetterRatioInURL, 
-    NoOfDegitsInURL, 
-    DegitRatioInURL, 
+    NoOfDigitsInURL, 
+    DigitRatioInURL, 
     NoOfEqualsInURL, 
     NoOfQMarkInURL, 
     NoOfAmpersandInURL, 
     NoOfOtherSpecialCharsInURL, 
-    SpacialCharRatioInURL, 
+    SpecialCharRatioInURL, 
     IsHTTPS, 
     LineOfCode, 
     LargestLineLength, 
@@ -58,13 +58,14 @@ Columns:
     Bank, 
     Pay, 
     Crypto, 
-    HasCopyrightInfo,NoOfImage, 
+    HasCopyrightInfo,
+    NoOfImage, 
     NoOfCSS, 
     NoOfJS, 
     NoOfSelfRef, 
     NoOfEmptyRef, 
     NoOfExternalRef, 
-    label.
+    Label.
 
         
 
